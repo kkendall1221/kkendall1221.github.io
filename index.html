@@ -21,9 +21,7 @@
   }
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
   html { scroll-behavior: smooth; }
-
   body {
     background: var(--parchment);
     color: var(--bark);
@@ -33,7 +31,7 @@
     overflow-x: hidden;
   }
 
-  /* ── NAV ── */
+  /* NAV */
   nav {
     position: fixed;
     top: 0; left: 0; right: 0;
@@ -46,7 +44,6 @@
     justify-content: space-between;
     border-bottom: 1px solid var(--walnut);
   }
-
   .nav-logo {
     font-family: 'Cormorant Garamond', serif;
     font-size: 17px;
@@ -56,13 +53,7 @@
     text-decoration: none;
     text-transform: uppercase;
   }
-
-  .nav-links {
-    display: flex;
-    gap: 36px;
-    list-style: none;
-  }
-
+  .nav-links { display: flex; gap: 36px; list-style: none; }
   .nav-links a {
     font-size: 11px;
     letter-spacing: 0.1em;
@@ -71,10 +62,9 @@
     text-decoration: none;
     transition: color 0.2s;
   }
-
   .nav-links a:hover { color: var(--copper); }
 
-  /* ── HERO ── */
+  /* HERO */
   .hero {
     background: var(--parchment);
     padding: 120px 72px 80px;
@@ -82,19 +72,11 @@
     animation: fadeUp 0.9s ease both;
     max-width: 860px;
   }
-
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(24px); }
     to { opacity: 1; transform: translateY(0); }
   }
-
-  .hero-rule {
-    width: 40px;
-    height: 2px;
-    background: var(--copper);
-    margin-bottom: 18px;
-  }
-
+  .hero-rule { width: 40px; height: 2px; background: var(--copper); margin-bottom: 18px; }
   .hero-eyebrow {
     font-size: 11px;
     letter-spacing: 0.22em;
@@ -103,7 +85,6 @@
     margin-bottom: 16px;
     font-weight: 400;
   }
-
   .hero-h1 {
     font-family: 'Cormorant Garamond', serif;
     font-size: clamp(38px, 5vw, 58px);
@@ -113,12 +94,7 @@
     margin-bottom: 22px;
     letter-spacing: -0.01em;
   }
-
-  .hero-h1 em {
-    font-style: italic;
-    color: var(--bark);
-  }
-
+  .hero-h1 em { font-style: italic; color: var(--bark); }
   .hero-body {
     font-size: 14px;
     color: var(--cognac);
@@ -127,14 +103,7 @@
     margin-bottom: 32px;
     font-weight: 300;
   }
-
-  .hero-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 9px;
-    margin-bottom: 32px;
-  }
-
+  .hero-tags { display: flex; flex-wrap: wrap; gap: 9px; margin-bottom: 32px; }
   .tag {
     font-size: 11px;
     letter-spacing: 0.04em;
@@ -145,24 +114,10 @@
     background: transparent;
     color: var(--walnut);
     transition: background 0.2s, color 0.2s;
+    cursor: default;
   }
-
-  .tag:hover {
-    background: var(--linen);
-  }
-
-  .tag-copper { background: transparent; border-color: var(--sand); color: var(--walnut); }
-  .tag-forest { background: transparent; border-color: var(--sand); color: var(--walnut); }
-  .tag-oxblood { background: transparent; border-color: var(--sand); color: var(--walnut); }
-  .tag-linen { background: transparent; border-color: var(--sand); color: var(--walnut); }
-  .tag-walnut { background: transparent; border-color: var(--sand); color: var(--walnut); }
-
-  .hero-actions {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-  }
-
+  .tag:hover { background: var(--linen); }
+  .hero-actions { display: flex; align-items: center; gap: 20px; }
   .btn-primary {
     background: var(--bark);
     color: var(--parchment);
@@ -176,9 +131,7 @@
     transition: background 0.2s;
     border: 1px solid var(--bark);
   }
-
   .btn-primary:hover { background: var(--walnut); border-color: var(--walnut); }
-
   .btn-ghost {
     font-size: 11px;
     letter-spacing: 0.1em;
@@ -190,17 +143,11 @@
     gap: 8px;
     transition: color 0.2s;
   }
-
   .btn-ghost:hover { color: var(--copper); }
-
-  .btn-ghost::after {
-    content: '→';
-    transition: transform 0.2s;
-  }
-
+  .btn-ghost::after { content: '→'; transition: transform 0.2s; }
   .btn-ghost:hover::after { transform: translateX(4px); }
 
-  /* Stats strip below hero */
+  /* STATS */
   .stats-strip {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -208,14 +155,8 @@
     border-bottom: 1px solid var(--sand);
     background: var(--linen);
   }
-
-  .stat-cell {
-    padding: 24px 32px;
-    border-right: 1px solid var(--sand);
-  }
-
+  .stat-cell { padding: 24px 32px; border-right: 1px solid var(--sand); }
   .stat-cell:last-child { border-right: none; }
-
   .stat-num {
     font-family: 'Cormorant Garamond', serif;
     font-size: 30px;
@@ -224,52 +165,12 @@
     line-height: 1;
     margin-bottom: 4px;
   }
+  .stat-label { font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
 
-  .stat-label {
-    font-size: 9px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--muted);
-  }
-
-  .osiria-link {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 14px 16px;
-    background: var(--walnut);
-    border-radius: 2px;
-    text-decoration: none;
-    transition: background 0.2s;
-    margin-bottom: 12px;
-  }
-
-  .osiria-link:hover { background: #4a3825; }
-
-  .osiria-link-name {
-    font-size: 11px;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--copper);
-    font-weight: 500;
-  }
-
-  .osiria-link-desc {
-    font-size: 10px;
-    color: var(--muted);
-    margin-top: 2px;
-  }
-
-  .osiria-link-arrow {
-    color: var(--copper);
-    font-size: 14px;
-  }
-
-  /* ── SECTION SHARED ── */
+  /* SECTIONS */
   .section { padding: 80px 48px; }
   .section-alt { background: var(--linen); }
   .section-dark { background: var(--bark); }
-
   .section-header {
     display: flex;
     justify-content: space-between;
@@ -278,9 +179,7 @@
     padding-bottom: 16px;
     border-bottom: 1px solid var(--sand);
   }
-
   .section-dark .section-header { border-bottom-color: var(--walnut); }
-
   .section-title {
     font-family: 'Cormorant Garamond', serif;
     font-size: 28px;
@@ -288,9 +187,7 @@
     color: var(--bark);
     letter-spacing: -0.01em;
   }
-
   .section-dark .section-title { color: var(--parchment); }
-
   .section-link {
     font-size: 10px;
     letter-spacing: 0.12em;
@@ -299,17 +196,33 @@
     text-decoration: none;
     transition: opacity 0.2s;
   }
-
   .section-link:hover { opacity: 0.7; }
 
-  /* ── RESEARCH ── */
-  .research-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-    margin-bottom: 20px;
+  /* RESEARCH FILTER TABS */
+  .filter-tabs {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 32px;
+    flex-wrap: wrap;
   }
+  .filter-tab {
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 7px 18px;
+    border-radius: 999px;
+    border: 1px solid var(--sand);
+    background: transparent;
+    color: var(--muted);
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: 'DM Sans', sans-serif;
+  }
+  .filter-tab:hover { border-color: var(--copper); color: var(--copper); }
+  .filter-tab.active { background: var(--bark); border-color: var(--bark); color: var(--parchment); }
 
+  /* RESEARCH GRID */
+  .research-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px; }
   .research-card {
     background: var(--linen);
     border: 1px solid var(--sand);
@@ -317,26 +230,14 @@
     padding: 28px;
     position: relative;
     overflow: hidden;
-    transition: border-color 0.2s;
+    transition: border-color 0.2s, transform 0.2s;
     text-decoration: none;
     display: block;
   }
-
-  .research-card:hover { border-color: var(--copper); }
-
-  .research-card-featured {
-    background: var(--walnut);
-    border-color: var(--walnut);
-  }
-
+  .research-card:hover { border-color: var(--copper); transform: translateY(-2px); }
+  .research-card-featured { background: var(--walnut); border-color: var(--walnut); }
   .research-card-featured:hover { border-color: var(--copper); }
-
-  .card-accent {
-    position: absolute;
-    bottom: 0; left: 0; right: 0;
-    height: 2px;
-  }
-
+  .card-accent { position: absolute; bottom: 0; left: 0; right: 0; height: 2px; }
   .research-card-title {
     font-family: 'Cormorant Garamond', serif;
     font-size: 18px;
@@ -345,21 +246,19 @@
     line-height: 1.3;
     margin: 12px 0 8px;
   }
-
   .research-card-featured .research-card-title { color: var(--parchment); }
-
-  .research-card-meta {
-    font-size: 11px;
+  .research-card-excerpt {
+    font-size: 12px;
     color: var(--muted);
-    letter-spacing: 0.04em;
+    line-height: 1.7;
+    margin-bottom: 10px;
+    font-weight: 300;
   }
+  .research-card-featured .research-card-excerpt { color: var(--faint); }
+  .research-card-meta { font-size: 11px; color: var(--muted); letter-spacing: 0.04em; }
+  .research-card-featured .research-card-meta { color: var(--cognac); }
 
-  .small-research-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
-  }
-
+  .small-research-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
   .small-card {
     background: var(--linen);
     border: 1px solid var(--sand);
@@ -367,11 +266,9 @@
     padding: 20px;
     text-decoration: none;
     display: block;
-    transition: border-color 0.2s;
+    transition: border-color 0.2s, transform 0.2s;
   }
-
-  .small-card:hover { border-color: var(--copper); }
-
+  .small-card:hover { border-color: var(--copper); transform: translateY(-2px); }
   .small-card-title {
     font-family: 'Cormorant Garamond', serif;
     font-size: 15px;
@@ -380,25 +277,12 @@
     line-height: 1.35;
     margin: 10px 0 6px;
   }
-
+  .small-card-excerpt { font-size: 11px; color: var(--muted); line-height: 1.6; margin-bottom: 8px; font-weight: 300; }
   .small-card-meta { font-size: 10px; color: var(--muted); }
 
-  /* ── ABOUT ── */
-  .about-grid {
-    display: grid;
-    grid-template-columns: 1.1fr 1fr;
-    gap: 60px;
-    align-items: start;
-  }
-
-  .about-eyebrow {
-    font-size: 10px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--copper);
-    margin-bottom: 16px;
-  }
-
+  /* ABOUT */
+  .about-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 60px; align-items: start; }
+  .about-eyebrow { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--copper); margin-bottom: 16px; }
   .about-h2 {
     font-family: 'Cormorant Garamond', serif;
     font-size: 42px;
@@ -407,66 +291,26 @@
     line-height: 1.1;
     margin-bottom: 20px;
   }
-
-  .about-body {
-    font-size: 14px;
-    color: var(--muted);
-    line-height: 1.85;
-    margin-bottom: 16px;
-    font-weight: 300;
-  }
-
-  .about-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-top: 24px;
-  }
-
-  /* Timeline */
+  .about-body { font-size: 14px; color: var(--muted); line-height: 1.85; margin-bottom: 16px; font-weight: 300; }
+  .about-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 24px; }
   .timeline { padding-left: 20px; border-left: 1px solid var(--walnut); }
-
-  .tl-item {
-    position: relative;
-    padding-bottom: 28px;
-  }
-
+  .tl-item { position: relative; padding-bottom: 28px; }
   .tl-item:last-child { padding-bottom: 0; }
-
   .tl-dot {
     position: absolute;
-    left: -26px;
-    top: 5px;
-    width: 9px;
-    height: 9px;
+    left: -26px; top: 5px;
+    width: 9px; height: 9px;
     border-radius: 50%;
     background: var(--copper);
     border: 2px solid var(--bark);
   }
+  .tl-role { font-size: 13px; font-weight: 500; color: var(--parchment); margin-bottom: 2px; }
+  .tl-place { font-size: 12px; color: var(--copper); margin-bottom: 2px; }
+  .tl-date { font-size: 10px; letter-spacing: 0.08em; color: var(--muted); font-family: 'DM Mono', monospace; }
 
-  .tl-role {
-    font-size: 13px;
-    font-weight: 500;
-    color: var(--parchment);
-    margin-bottom: 2px;
-  }
-
-  .tl-place {
-    font-size: 12px;
-    color: var(--copper);
-    margin-bottom: 2px;
-  }
-
-  .tl-date {
-    font-size: 10px;
-    letter-spacing: 0.08em;
-    color: var(--muted);
-    font-family: 'DM Mono', monospace;
-  }
-
-  /* ── WRITING ── */
+  /* WRITING */
+  .writing-filters { display: flex; gap: 8px; margin-bottom: 24px; flex-wrap: wrap; }
   .writing-list { border-top: 1px solid var(--sand); }
-
   .writing-item {
     display: grid;
     grid-template-columns: 1fr auto auto;
@@ -476,10 +320,10 @@
     border-bottom: 1px solid var(--sand);
     text-decoration: none;
     transition: opacity 0.2s;
+    cursor: pointer;
   }
-
   .writing-item:hover { opacity: 0.7; }
-
+  .writing-item.hidden { display: none; }
   .writing-title {
     font-family: 'Cormorant Garamond', serif;
     font-size: 17px;
@@ -487,7 +331,6 @@
     color: var(--bark);
     line-height: 1.3;
   }
-
   .writing-cat {
     font-size: 10px;
     letter-spacing: 0.1em;
@@ -495,145 +338,135 @@
     color: var(--copper);
     white-space: nowrap;
   }
+  .writing-date { font-size: 10px; color: var(--muted); white-space: nowrap; font-family: 'DM Mono', monospace; }
 
-  .writing-date {
-    font-size: 10px;
+  /* POST MODAL */
+  .modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(44, 31, 14, 0.75);
+    z-index: 200;
+    backdrop-filter: blur(3px);
+    animation: fadeIn 0.2s ease;
+  }
+  .modal-overlay.open { display: flex; align-items: center; justify-content: center; padding: 40px 24px; }
+  @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+  .modal {
+    background: var(--parchment);
+    border-radius: 4px;
+    max-width: 680px;
+    width: 100%;
+    max-height: 85vh;
+    overflow-y: auto;
+    animation: slideUp 0.3s ease;
+    position: relative;
+  }
+  @keyframes slideUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+  .modal-header {
+    padding: 36px 40px 24px;
+    border-bottom: 1px solid var(--sand);
+    position: sticky;
+    top: 0;
+    background: var(--parchment);
+    z-index: 1;
+  }
+  .modal-close {
+    position: absolute;
+    top: 20px; right: 24px;
+    background: none;
+    border: none;
+    font-size: 20px;
     color: var(--muted);
-    white-space: nowrap;
-    font-family: 'DM Mono', monospace;
+    cursor: pointer;
+    line-height: 1;
+    padding: 4px 8px;
+    transition: color 0.2s;
   }
-
-  /* ── CURRENTLY ── */
-  .currently-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
+  .modal-close:hover { color: var(--bark); }
+  .modal-eyebrow {
+    font-size: 10px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--copper);
+    margin-bottom: 10px;
   }
+  .modal-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 26px;
+    font-weight: 600;
+    color: var(--bark);
+    line-height: 1.25;
+    margin-bottom: 10px;
+  }
+  .modal-meta { font-size: 11px; color: var(--muted); font-family: 'DM Mono', monospace; }
+  .modal-body { padding: 28px 40px 36px; }
+  .modal-body p { font-size: 14px; color: var(--cognac); line-height: 1.9; margin-bottom: 16px; font-weight: 300; }
+  .modal-body h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--bark);
+    margin: 24px 0 8px;
+  }
+  .modal-body ul { padding-left: 18px; margin-bottom: 16px; }
+  .modal-body ul li { font-size: 14px; color: var(--cognac); line-height: 1.85; margin-bottom: 6px; font-weight: 300; }
+  .modal-citation {
+    margin-top: 24px;
+    padding: 16px 20px;
+    background: var(--linen);
+    border-left: 2px solid var(--copper);
+    border-radius: 0 3px 3px 0;
+    font-size: 12px;
+    color: var(--muted);
+    font-style: italic;
+    line-height: 1.7;
+  }
+  .modal-li-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 20px;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--copper);
+    text-decoration: none;
+    transition: opacity 0.2s;
+  }
+  .modal-li-link:hover { opacity: 0.7; }
 
+  /* CURRENTLY */
+  .currently-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
   .currently-card {
     background: var(--parchment);
     border: 1px solid var(--sand);
     border-radius: 3px;
     padding: 20px;
   }
+  .currently-label { font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }
+  .currently-val { font-family: 'Cormorant Garamond', serif; font-size: 16px; font-weight: 500; color: var(--bark); margin-bottom: 3px; }
+  .currently-sub { font-size: 11px; color: var(--muted); }
+  .currently-accent { height: 2px; margin: 14px -20px -20px; border-radius: 0 0 3px 3px; }
 
-  .currently-label {
-    font-size: 9px;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin-bottom: 6px;
-  }
-
-  .currently-val {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 16px;
-    font-weight: 500;
-    color: var(--bark);
-    margin-bottom: 3px;
-  }
-
-  .currently-sub {
-    font-size: 11px;
-    color: var(--muted);
-  }
-
-  .currently-accent {
-    height: 2px;
-    border-radius: 0;
-    margin: 0 -20px -20px;
-    margin-top: 14px;
-    border-radius: 0 0 3px 3px;
-  }
-
-  /* ── FOOTER ── */
-  footer {
-    background: var(--bark);
-    padding: 48px 48px 32px;
-    border-top: 2px solid var(--copper);
-  }
-
-  .footer-top {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 40px;
-    margin-bottom: 40px;
-  }
-
-  .footer-name {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 20px;
-    font-weight: 500;
-    color: var(--parchment);
-    letter-spacing: 0.08em;
-    margin-bottom: 8px;
-  }
-
-  .footer-desc {
-    font-size: 12px;
-    color: var(--muted);
-    line-height: 1.7;
-    font-weight: 300;
-  }
-
-  .footer-col-title {
-    font-size: 10px;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: var(--copper);
-    margin-bottom: 16px;
-  }
-
+  /* FOOTER */
+  footer { background: var(--bark); padding: 48px 48px 32px; border-top: 2px solid var(--copper); }
+  .footer-top { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
+  .footer-name { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 500; color: var(--parchment); letter-spacing: 0.08em; margin-bottom: 8px; }
+  .footer-desc { font-size: 12px; color: var(--muted); line-height: 1.7; font-weight: 300; }
+  .footer-col-title { font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--copper); margin-bottom: 16px; }
   .footer-links { list-style: none; }
-
   .footer-links li { margin-bottom: 10px; }
-
-  .footer-links a {
-    font-size: 12px;
-    color: var(--muted);
-    text-decoration: none;
-    transition: color 0.2s;
-  }
-
+  .footer-links a { font-size: 12px; color: var(--muted); text-decoration: none; transition: color 0.2s; }
   .footer-links a:hover { color: var(--parchment); }
-
-  .footer-bottom {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-top: 24px;
-    border-top: 1px solid var(--walnut);
-  }
-
-  .footer-copy {
-    font-size: 10px;
-    color: var(--walnut);
-    letter-spacing: 0.06em;
-    font-family: 'DM Mono', monospace;
-  }
-
-  .footer-osiria {
-    font-size: 10px;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--copper);
-    text-decoration: none;
-    transition: opacity 0.2s;
-  }
-
+  .footer-bottom { display: flex; justify-content: space-between; align-items: center; padding-top: 24px; border-top: 1px solid var(--walnut); }
+  .footer-copy { font-size: 10px; color: var(--walnut); letter-spacing: 0.06em; font-family: 'DM Mono', monospace; }
+  .footer-osiria { font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--copper); text-decoration: none; transition: opacity 0.2s; }
   .footer-osiria:hover { opacity: 0.7; }
 
-  /* ── SCROLL ANIMATIONS ── */
-  .reveal {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.7s ease, transform 0.7s ease;
-  }
-
-  .reveal.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  /* SCROLL ANIMATIONS */
+  .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
 </style>
 </head>
 <body>
@@ -670,59 +503,64 @@
 
 <!-- STATS STRIP -->
 <div class="stats-strip">
-  <div class="stat-cell">
-    <div class="stat-num">14+</div>
-    <div class="stat-label">Markets covered</div>
-  </div>
-  <div class="stat-cell">
-    <div class="stat-num">6</div>
-    <div class="stat-label">Years researching</div>
-  </div>
-  <div class="stat-cell">
-    <div class="stat-num">2</div>
-    <div class="stat-label">Active firms</div>
-  </div>
-  <div class="stat-cell">
-    <div class="stat-num">40+</div>
-    <div class="stat-label">Reports published</div>
-  </div>
+  <div class="stat-cell"><div class="stat-num">4</div><div class="stat-label">Research domains</div></div>
+  <div class="stat-cell"><div class="stat-num">2</div><div class="stat-label">Years researching</div></div>
+  <div class="stat-cell"><div class="stat-num">2</div><div class="stat-label">Active firms</div></div>
+  <div class="stat-cell"><div class="stat-num">11+</div><div class="stat-label">Posts published</div></div>
 </div>
 
 <!-- RESEARCH -->
 <section class="section" id="research">
   <div class="section-header reveal">
     <h2 class="section-title">Featured Research</h2>
-    <a href="#" class="section-link">All research →</a>
+    <a href="#writing" class="section-link">All writing →</a>
   </div>
+
+  <div class="filter-tabs reveal">
+    <button class="filter-tab active" data-filter="all">All</button>
+    <button class="filter-tab" data-filter="macro">Macro</button>
+    <button class="filter-tab" data-filter="trade">Trade</button>
+    <button class="filter-tab" data-filter="quant">Quant</button>
+    <button class="filter-tab" data-filter="energy">Energy</button>
+  </div>
+
   <div class="research-grid reveal">
-    <a href="#" class="research-card">
-      <span class="tag">Trade Policy</span>
-      <div class="research-card-title">Trade flow divergence and the restructuring of global supply chains</div>
-      <div class="research-card-meta">Osiria Research · June 2026</div>
+    <!-- Featured: Coffee SARIMA+GARCH — original work -->
+    <a href="#" class="research-card research-card-featured" data-post="coffee" data-category="quant">
+      <span class="tag" style="border-color: var(--cognac); color: var(--sand);">Quant · Original Model</span>
+      <div class="research-card-title">Arabica Coffee Futures — SARIMA + GARCH Volatility Forecast</div>
+      <div class="research-card-excerpt">15 years of KC=F price history. Stationarity testing, seasonal decomposition, and a 12-month forward projection with GJR-GARCH conditional volatility. Built from scratch.</div>
+      <div class="research-card-meta" style="color: var(--cognac);">Applied Economics · June 2026</div>
       <div class="card-accent" style="background: var(--copper);"></div>
     </a>
-    <a href="#" class="research-card research-card-featured">
-      <span class="tag" style="border-color: var(--cognac); color: var(--sand);">Macro</span>
-      <div class="research-card-title">Energy market transitions under a multipolar trade regime</div>
-      <div class="research-card-meta" style="color: var(--cognac);">Osiria Capital · May 2026</div>
+    <!-- Featured: Malacca -->
+    <a href="#" class="research-card" data-post="malacca" data-category="trade">
+      <span class="tag">Trade · Geopolitics</span>
+      <div class="research-card-title">The Malacca Dilemma — China's Energy Chokepoint</div>
+      <div class="research-card-excerpt">Over 20% of global maritime trade transits 1.7 miles of water. 102,500+ ships in 2025 alone. How a constraint here reshapes the second largest economy on earth.</div>
+      <div class="research-card-meta">Analysis · June 2026</div>
       <div class="card-accent" style="background: var(--copper);"></div>
     </a>
   </div>
+
   <div class="small-research-grid reveal">
-    <a href="#" class="small-card">
-      <span class="tag">Quant</span>
-      <div class="small-card-title">Modeling currency risk in emerging market portfolios</div>
-      <div class="small-card-meta">April 2026</div>
+    <a href="#" class="small-card" data-post="iran" data-category="macro">
+      <span class="tag">Macro · Geopolitics</span>
+      <div class="small-card-title">Iran Conflict — Who Benefits Without Fighting</div>
+      <div class="small-card-excerpt">Russia's fiscal windfall. China's discounted oil. The six indirect advantages accruing to competitors of the West.</div>
+      <div class="small-card-meta">June 2026</div>
     </a>
-    <a href="#" class="small-card">
-      <span class="tag">International</span>
-      <div class="small-card-title">Sanctions, trade corridors and the new geography of capital</div>
-      <div class="small-card-meta">March 2026</div>
+    <a href="#" class="small-card" data-post="japan-bonds" data-category="macro">
+      <span class="tag">Macro · Fixed Income</span>
+      <div class="small-card-title">Japan's Bond Market & Global Ripples</div>
+      <div class="small-card-excerpt">The carry trade unwind, capital flow rotation, and what rising JGB yields mean for U.S. Treasuries.</div>
+      <div class="small-card-meta">June 2026</div>
     </a>
-    <a href="#" class="small-card">
-      <span class="tag">Policy</span>
-      <div class="small-card-title">Fiscal divergence across G20 economies post-2024</div>
-      <div class="small-card-meta">February 2026</div>
+    <a href="#" class="small-card" data-post="distorted" data-category="trade">
+      <span class="tag">Trade · Policy</span>
+      <div class="small-card-title">Trade Shocks in Distorted Economies</div>
+      <div class="small-card-excerpt">NBER summer institute: fragmentation is selective, strategic competition is replacing cooperation, and smaller economies are at risk of marginalization.</div>
+      <div class="small-card-meta">June 2026</div>
     </a>
   </div>
 </section>
@@ -735,12 +573,14 @@
       <h2 class="about-h2">Economist.<br>Analyst.<br>Builder.</h2>
       <p class="about-body">I study the forces reshaping the global economy — trade policy, energy markets, capital flows, and the geopolitical fault lines that move them. My work sits at the intersection of rigorous quantitative analysis and real-world application.</p>
       <p class="about-body">Currently building Osiria Capital and Osiria Research. Focused on international economics, macro strategy, and the emerging structure of global trade post-2020.</p>
+      <p class="about-body" style="font-style: italic; color: var(--copper); font-size: 13px;">Graduate Studies in Applied Economics — In Progress.</p>
       <div class="about-tags">
-        <span class="tag tag-linen" style="background:transparent; border-color: var(--walnut); color: var(--muted);">International Trade</span>
-        <span class="tag tag-linen" style="background:transparent; border-color: var(--walnut); color: var(--muted);">Macro Strategy</span>
-        <span class="tag tag-linen" style="background:transparent; border-color: var(--walnut); color: var(--muted);">Econometrics</span>
-        <span class="tag tag-linen" style="background:transparent; border-color: var(--walnut); color: var(--muted);">Energy Markets</span>
-        <span class="tag tag-linen" style="background:transparent; border-color: var(--walnut); color: var(--muted);">Quant Analysis</span>
+        <span class="tag" style="background:transparent; border-color: var(--walnut); color: var(--muted);">International Trade</span>
+        <span class="tag" style="background:transparent; border-color: var(--walnut); color: var(--muted);">Macro Strategy</span>
+        <span class="tag" style="background:transparent; border-color: var(--walnut); color: var(--muted);">Econometrics</span>
+        <span class="tag" style="background:transparent; border-color: var(--walnut); color: var(--muted);">Energy Markets</span>
+        <span class="tag" style="background:transparent; border-color: var(--walnut); color: var(--muted);">Time Series</span>
+        <span class="tag" style="background:transparent; border-color: var(--walnut); color: var(--muted);">GARCH / SARIMA</span>
       </div>
     </div>
     <div class="reveal">
@@ -748,9 +588,9 @@
       <div class="timeline">
         <div class="tl-item">
           <div class="tl-dot"></div>
-          <div class="tl-role">Principal & Founder</div>
+          <div class="tl-role">Founder</div>
           <div class="tl-place">Osiria Capital</div>
-          <div class="tl-date">2026 — Present</div>
+          <div class="tl-date">2023 — Present</div>
         </div>
         <div class="tl-item">
           <div class="tl-dot"></div>
@@ -760,15 +600,21 @@
         </div>
         <div class="tl-item">
           <div class="tl-dot"></div>
-          <div class="tl-role">Trade & Economics Analyst</div>
-          <div class="tl-place">Independent</div>
-          <div class="tl-date">2022 — 2026</div>
+          <div class="tl-role">Business Development Analyst</div>
+          <div class="tl-place">Gridworks</div>
+          <div class="tl-date">2024 — 2026</div>
         </div>
         <div class="tl-item">
           <div class="tl-dot"></div>
-          <div class="tl-role">B.S. Economics</div>
-          <div class="tl-place">University</div>
-          <div class="tl-date">Class of 2022</div>
+          <div class="tl-role">M.S. Applied Economics</div>
+          <div class="tl-place">In Progress</div>
+          <div class="tl-date">2026 — 2028</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-role">B.A. Economics</div>
+          <div class="tl-place">University of New Mexico</div>
+          <div class="tl-date">Class of 2023</div>
         </div>
       </div>
     </div>
@@ -779,33 +625,71 @@
 <section class="section" id="writing">
   <div class="section-header reveal">
     <h2 class="section-title">Latest Writing</h2>
-    <a href="#" class="section-link">All posts →</a>
   </div>
+
+  <div class="writing-filters reveal">
+    <button class="filter-tab active" data-wfilter="all">All</button>
+    <button class="filter-tab" data-wfilter="macro">Macro</button>
+    <button class="filter-tab" data-wfilter="trade">Trade</button>
+    <button class="filter-tab" data-wfilter="quant">Quant</button>
+    <button class="filter-tab" data-wfilter="energy">Energy</button>
+  </div>
+
   <div class="writing-list reveal">
-    <a href="#" class="writing-item">
-      <div class="writing-title">Why the dollar's reserve status is more fragile than consensus thinks</div>
+    <a class="writing-item" data-post="coffee" data-wcat="quant">
+      <div class="writing-title">Arabica Coffee Futures — SARIMA + GARCH Volatility Forecast</div>
+      <span class="writing-cat">Quant</span>
+      <span class="writing-date">Jun 2026</span>
+    </a>
+    <a class="writing-item" data-post="tariffs" data-wcat="quant">
+      <div class="writing-title">GARCH Models for Volatility in High-Frequency Trading Environments</div>
+      <span class="writing-cat">Quant</span>
+      <span class="writing-date">Jun 2026</span>
+    </a>
+    <a class="writing-item" data-post="malacca" data-wcat="trade">
+      <div class="writing-title">The Malacca Dilemma — China's Energy Chokepoint</div>
+      <span class="writing-cat">Trade</span>
+      <span class="writing-date">Jun 2026</span>
+    </a>
+    <a class="writing-item" data-post="distorted" data-wcat="trade">
+      <div class="writing-title">Trade Shocks in Distorted Economies</div>
+      <span class="writing-cat">Trade</span>
+      <span class="writing-date">Jun 2026</span>
+    </a>
+    <a class="writing-item" data-post="iran" data-wcat="macro">
+      <div class="writing-title">Iran Conflict — Who Benefits Without Fighting</div>
       <span class="writing-cat">Macro</span>
       <span class="writing-date">Jun 2026</span>
     </a>
-    <a href="#" class="writing-item">
-      <div class="writing-title">The quiet restructuring of Asian trade blocs</div>
-      <span class="writing-cat">Trade</span>
-      <span class="writing-date">May 2026</span>
+    <a class="writing-item" data-post="japan-bonds" data-wcat="macro">
+      <div class="writing-title">Japan's Bond Market & Global Ripples</div>
+      <span class="writing-cat">Macro</span>
+      <span class="writing-date">Jun 2026</span>
     </a>
-    <a href="#" class="writing-item">
-      <div class="writing-title">What the Fed's pause means for emerging market debt</div>
-      <span class="writing-cat">Policy</span>
-      <span class="writing-date">Apr 2026</span>
+    <a class="writing-item" data-post="yen" data-wcat="macro">
+      <div class="writing-title">Yen Dynamics — BOJ Paralysis & Middle East Spillover</div>
+      <span class="writing-cat">Macro</span>
+      <span class="writing-date">Jun 2026</span>
     </a>
-    <a href="#" class="writing-item">
-      <div class="writing-title">Personal branding for analysts — why your work deserves an audience</div>
-      <span class="writing-cat">Career</span>
-      <span class="writing-date">Mar 2026</span>
+    <a class="writing-item" data-post="qe" data-wcat="macro">
+      <div class="writing-title">Quantitative Easing as a Global Shockwave</div>
+      <span class="writing-cat">Macro</span>
+      <span class="writing-date">Jun 2026</span>
     </a>
-    <a href="#" class="writing-item">
-      <div class="writing-title">Understanding sanctions as a trade instrument</div>
-      <span class="writing-cat">Policy</span>
-      <span class="writing-date">Feb 2026</span>
+    <a class="writing-item" data-post="airlines" data-wcat="energy">
+      <div class="writing-title">Airlines & Energy — Are Asian Carriers Hedged Enough?</div>
+      <span class="writing-cat">Energy</span>
+      <span class="writing-date">Jun 2026</span>
+    </a>
+    <a class="writing-item" data-post="orderflow" data-wcat="quant">
+      <div class="writing-title">Order Flow Imbalance & High Frequency Trading</div>
+      <span class="writing-cat">Quant</span>
+      <span class="writing-date">Jun 2026</span>
+    </a>
+    <a class="writing-item" data-post="econophysics" data-wcat="quant">
+      <div class="writing-title">Econophysics — Entropy as a Volatility Predictor</div>
+      <span class="writing-cat">Quant</span>
+      <span class="writing-date">Jun 2026</span>
     </a>
   </div>
 </section>
@@ -818,25 +702,23 @@
   <div class="currently-grid reveal">
     <div class="currently-card">
       <div class="currently-label">Reading</div>
-      <div class="currently-val">The Big Short</div>
-      <div class="currently-sub">Michael Lewis</div>
+      <div class="currently-val">International Economics</div>
+      <div class="currently-sub">Menzie Chinn & Douglas Irwin</div>
       <div class="currently-accent" style="background: var(--copper);"></div>
     </div>
     <div class="currently-card">
       <div class="currently-label">Listening to</div>
-      <div class="currently-val">Kind of Blue</div>
-      <div class="currently-sub">Miles Davis</div>
+      <div class="currently-val">Jazz Noir</div>
+      <div class="currently-sub">Various Artists</div>
       <div class="currently-accent" style="background: var(--forest);"></div>
     </div>
     <div class="currently-card">
       <div class="currently-label">Working on</div>
-      <div class="currently-val">Osiria Capital Launch</div>
-      <div class="currently-sub">Q3 2026</div>
+      <div class="currently-val">Osiria Research</div>
+      <div class="currently-sub">Research Infrastructure</div>
       <div class="currently-accent" style="background: var(--oxblood);"></div>
     </div>
   </div>
-
-  <!-- Contact strip -->
   <div style="margin-top: 48px; padding: 36px; background: var(--bark); border-radius: 3px;" class="reveal">
     <div style="display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 40px;">
       <div>
@@ -868,31 +750,284 @@
     <div>
       <div class="footer-col-title">Connect</div>
       <ul class="footer-links">
-        <li><a href="#">LinkedIn</a></li>
-        <li><a href="#">Twitter / X</a></li>
-        <li><a href="#">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/kaleb-kendall-5617661b5/" target="_blank">LinkedIn</a></li>
+        <li><a href="https://www.instagram.com/kalebkendall/" target="_blank">Instagram</a></li>
+        <li><a href="https://github.com/kkendall1221" target="_blank">GitHub</a></li>
         <li><a href="#">Substack</a></li>
       </ul>
     </div>
   </div>
   <div class="footer-bottom">
     <span class="footer-copy">© 2026 Kaleb Kendall. All rights reserved.</span>
-    <a href="#" class="footer-osiria">Osiria Capital ↗</a>
   </div>
 </footer>
 
-<script>
-  const reveals = document.querySelectorAll('.reveal');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.classList.add('visible');
-        observer.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.1 });
-  reveals.forEach(r => observer.observe(r));
-</script>
+<!-- POST MODAL -->
+<div class="modal-overlay" id="modal">
+  <div class="modal" id="modal-inner">
+    <div class="modal-header">
+      <button class="modal-close" id="modal-close">✕</button>
+      <div class="modal-eyebrow" id="modal-cat"></div>
+      <div class="modal-title" id="modal-title"></div>
+      <div class="modal-meta" id="modal-meta"></div>
+    </div>
+    <div class="modal-body" id="modal-body"></div>
+  </div>
+</div>
 
+<script>
+// ── POST DATA ──
+const posts = {
+  coffee: {
+    cat: "Quant · Original Model",
+    title: "Arabica Coffee Futures — SARIMA + GARCH Volatility Forecast",
+    meta: "Applied Economics · June 2026",
+    body: `
+      <p>Most people see coffee as a morning habit. I spent the last few days seeing it as a dataset.</p>
+      <p>While preparing for my Applied Economics graduate program, I built a SARIMA(0,1,0)×(1,1,1,12) + GARCH(1,1) model forecasting Arabica coffee futures (KC=F) — 15 years of price history, stationarity testing, and a seasonal model that captures both short-run noise and the cyclical patterns baked into the coffee supply chain.</p>
+      <h4>Key findings</h4>
+      <ul>
+        <li>Prices ran from 150¢/lb in 2021 to over 420¢/lb by early 2025.</li>
+        <li>Volatility peaked above 45% annualised in late 2025, and is now mean-reverting toward the historical average of 33.5%.</li>
+        <li>The 12-month forecast projects a moderate pullback with wide uncertainty bands — coffee is one of the most shock-prone commodities on the planet.</li>
+        <li>Daily GJR-GARCH(1,1) investigation confirms strong volatility clustering and asymmetric responses to negative shocks.</li>
+      </ul>
+      <p>One frost in Brazil. One La Niña cycle. One BRL/USD move. And your model's confidence interval swallows the chart. This is applied economics.</p>
+      <div class="modal-citation">Built using Python (statsmodels, arch). Full source available on GitHub.</div>
+      <a href="https://github.com/kkendall1221" target="_blank" class="modal-li-link">View on GitHub ↗</a>
+    `
+  },
+  malacca: {
+    cat: "Trade · Geopolitics",
+    title: "The Looming Concern in the Strait of Malacca",
+    meta: "Analysis · June 2026",
+    body: `
+      <p>Most people have never heard of the Strait of Malacca. But it might be the single most important stretch of water in the global economy.</p>
+      <p>At just 1.7 miles wide at its narrowest point, this waterway carries over 20% of global maritime trade — including 23.2 million barrels of oil per day, more than Hormuz itself.</p>
+      <h4>What the numbers say</h4>
+      <ul>
+        <li>102,500+ ships transited in 2025 alone.</li>
+        <li>Piracy incidents hit 108 in 2025, up from recent years.</li>
+        <li>China's entire energy import strategy hinges on it staying open — the so-called "Malacca Dilemma."</li>
+      </ul>
+      <p>The disruption from Hormuz has been felt globally, especially in oil markets. The question worth asking: how consequential would a constraint or blockade be on the second-largest economy in the world — and by extension every country that imports from China?</p>
+      <div class="modal-citation">Bloomberg analysis linked in original post.</div>
+      <a href="https://www.linkedin.com/in/kkendall1221" target="_blank" class="modal-li-link">Read on LinkedIn ↗</a>
+    `
+  },
+  iran: {
+    cat: "Macro · Geopolitics",
+    title: "Iran Conflict — Who Benefits Without Fighting",
+    meta: "Analysis · June 2026",
+    body: `
+      <p>The current Iran conflict is often framed through the lens of direct participants. But zooming out, the more interesting story is who benefits without fighting.</p>
+      <p>A recent analysis from the Peterson Institute for International Economics highlights a key dynamic: Russia and China are emerging as indirect winners.</p>
+      <h4>Six mechanisms</h4>
+      <ul>
+        <li><strong>Russia's fiscal windfall:</strong> Higher energy prices act as a massive tailwind for Russian revenues, effectively offsetting sanctions pressure.</li>
+        <li><strong>China's strategic position:</strong> China continues to secure discounted Iranian oil while staying largely out of the conflict.</li>
+        <li><strong>Sanctions fragmentation:</strong> U.S. enforcement becomes more fragmented as waivers and geopolitical trade-offs increase.</li>
+        <li><strong>Alternative financial systems:</strong> China's CIPS infrastructure becomes more attractive as countries seek to bypass Western-controlled systems.</li>
+        <li><strong>U.S. strategic dilution:</strong> Military resources redirected to the Middle East give Russia and China room to maneuver.</li>
+        <li><strong>Western alliance strain:</strong> Diverging priorities between the U.S. and Europe create fractures that benefit competitors.</li>
+      </ul>
+      <div class="modal-citation">Peterson Institute for International Economics — full analysis linked in original post.</div>
+      <a href="https://www.linkedin.com/in/kkendall1221" target="_blank" class="modal-li-link">Read on LinkedIn ↗</a>
+    `
+  },
+  "japan-bonds": {
+    cat: "Macro · Fixed Income",
+    title: "Japan's Bond Market & Global Ripples",
+    meta: "Analysis · June 2026",
+    body: `
+      <p>Japan's bond market — once considered one of the most stable — has undergone a severe sell-off. This burst of volatility marks a new chapter, moving away from decades of low and predictable yields after the Bank of Japan ended its experiment with negative interest rates.</p>
+      <h4>Two global transmission channels</h4>
+      <ul>
+        <li><strong>Carry trade unwind:</strong> For years, investors borrowed cheaply in yen to finance higher-yielding U.S. assets. As Japanese yields rise, these positions could unwind — creating pressure across equities and credit markets.</li>
+        <li><strong>Capital flow rotation:</strong> Japanese institutions are major holders of U.S. Treasuries. Rising domestic yields may prompt portfolio restructuring, reducing new purchases of U.S. debt and tightening supply-demand dynamics further.</li>
+      </ul>
+      <div class="modal-citation">Bloomberg — full article linked in original post.</div>
+      <a href="https://www.linkedin.com/in/kkendall1221" target="_blank" class="modal-li-link">Read on LinkedIn ↗</a>
+    `
+  },
+  distorted: {
+    cat: "Trade · Policy",
+    title: "Trade Shocks in Distorted Economies",
+    meta: "Analysis · June 2026",
+    body: `
+      <p>The geo-economic landscape is shifting — and with it, our perceptions of doing business with international neighbors. The NBER recently concluded their summer institute conference, presenting the paper "Trade Shocks in Distorted Economies" by Adao, Fernandes, Quintero, and Hsieh.</p>
+      <h4>Three key takeaways</h4>
+      <ul>
+        <li><strong>Fragmentation is not uniform:</strong> While globalization is under stress, evidence shows the fragmentation is selective and concentrated in critical sectors.</li>
+        <li><strong>Strategic interdependence:</strong> Governments are reevaluating supply chain dependencies — no longer focused strictly on efficiency, but also on resilience and stability.</li>
+        <li><strong>Governance gap:</strong> The authors call for guardrails to manage strategic competition — avoiding escalation, ensuring transparency, and protecting smaller economies from great-power rivalries.</li>
+      </ul>
+      <div class="modal-citation">Rodrigo Adão, Chang-Tai Hsieh, Ana Fernandes, and Jose M. Quintero, "Trade Shocks in Distorted Economies," University of Chicago and World Bank working paper, June 28, 2025.</div>
+      <a href="https://www.linkedin.com/in/kkendall1221" target="_blank" class="modal-li-link">Read on LinkedIn ↗</a>
+    `
+  },
+  yen: {
+    cat: "Macro · FX",
+    title: "Yen Dynamics — BOJ Paralysis & Middle East Spillover",
+    meta: "Analysis · June 2026",
+    body: `
+      <p>The fallout from developments in the Middle East is not constrained to direct participants. Many countries that support their energy infrastructure by importing significant amounts of oil are not only incurring the costs — they are left cautious and timid when it comes to major economic decisions.</p>
+      <p>In Japan's case, the conflicts in the Middle East add noise and complexity to an already difficult domestic policy environment, making the BOJ's path forward considerably harder to navigate.</p>
+      <div class="modal-citation">Bloomberg — full analysis linked in original post.</div>
+      <a href="https://www.linkedin.com/in/kkendall1221" target="_blank" class="modal-li-link">Read on LinkedIn ↗</a>
+    `
+  },
+  qe: {
+    cat: "Macro · Monetary Policy",
+    title: "Quantitative Easing as a Global Shockwave",
+    meta: "Analysis · June 2026",
+    body: `
+      <p>Quantitative easing isn't just a domestic policy — it's a global shockwave. When central banks like the Fed expand their balance sheets, the capital doesn't just stay home. It flows outward — often rapidly — into emerging markets chasing yield.</p>
+      <h4>Three insights from the BIS research</h4>
+      <ul>
+        <li><strong>Push vs. Pull factors:</strong> QE is found to be a dominant "push" factor driving capital flows to Asia-Pacific, distinct from country-specific "pull" factors like growth differentials.</li>
+        <li><strong>Sudden stop risk:</strong> The temporary nature of QE heightens vulnerability to future tapering or normalization shocks — precisely the dynamics seen in the 2013 Taper Tantrum.</li>
+        <li><strong>Policy implications:</strong> Stronger macroprudential frameworks, exchange rate flexibility, and adequate reserves are the prescribed defenses.</li>
+      </ul>
+      <div class="modal-citation">Kearns, Jonathan, and Nikhil Patel. "The Impact of Quantitative Easing on Capital Flows in the Asia-Pacific Region." BIS Working Papers No. 695. December 2017.</div>
+      <a href="https://www.linkedin.com/in/kkendall1221" target="_blank" class="modal-li-link">Read on LinkedIn ↗</a>
+    `
+  },
+  airlines: {
+    cat: "Energy · Trade",
+    title: "Airlines & Energy — Are Asian Carriers Hedged Enough?",
+    meta: "Analysis · June 2026",
+    body: `
+      <p>One of my favorite professors once jokingly said airlines were essentially hedge funds for oil. The idea was comical at first — then I began to realize how much of a dependency many major corporations have on oil.</p>
+      <p>While American and European carriers appear reasonably hedged, the same cannot be said for Asian airlines. With oil surcharges, scaling back of operations, and survivability questions emerging for budget carriers, the exposure is acute.</p>
+      <h4>The broader picture</h4>
+      <ul>
+        <li>Countries like South Korea and Japan — which import significant amounts of oil — are left heavily exposed to supply disruptions.</li>
+        <li>Supply chain constraints and cost pass-through to consumers create conditions for stagflation.</li>
+        <li>A diversified energy infrastructure is no longer optional — it is a strategic imperative.</li>
+      </ul>
+      <div class="modal-citation">Bloomberg — multiple sources linked in original post.</div>
+      <a href="https://www.linkedin.com/in/kkendall1221" target="_blank" class="modal-li-link">Read on LinkedIn ↗</a>
+    `
+  },
+  orderflow: {
+    cat: "Quant · Markets",
+    title: "Order Flow Imbalance & High Frequency Trading",
+    meta: "Research Review · June 2026",
+    body: `
+      <p>Traders, analysts and quants often do a brief overview of order flow and liquidity dynamics — but overlook the nuances that drive crucial behaviors seen in high-frequency markets.</p>
+      <p>Matteo Pecchiari's "Orderflow Imbalance and High Frequency Trading" is a foundational paper I can't recommend enough.</p>
+      <h4>Three key insights</h4>
+      <ul>
+        <li><strong>Asymmetric digestion:</strong> Positive returns are more correlated with order flow than negative returns — the market reacts asymmetrically to incoming information.</li>
+        <li><strong>Short-term correlation:</strong> Using a 30-second timeframe, there is a strong positive correlation between order flow and returns. This correlation weakens as the timeframe increases.</li>
+        <li><strong>Mean reversion:</strong> The first differences of order flow are mean-reverting, suggesting overreactions are followed by correction — a foundational behavior in mean reversion strategies.</li>
+      </ul>
+      <div class="modal-citation">Matteo Pecchiari, "Orderflow Imbalance and High Frequency Trading." Master's thesis, Department of Economics and Finance, Chair of Empirical Finance, 2020.</div>
+      <a href="https://www.linkedin.com/in/kkendall1221" target="_blank" class="modal-li-link">Read on LinkedIn ↗</a>
+    `
+  },
+  econophysics: {
+    cat: "Quant · Econophysics",
+    title: "Thermodynamic Analysis of Financial Markets",
+    meta: "Research Review · June 2026",
+    body: `
+      <p>You can't combine Physics and Economics — or can you? Econophysics is an emerging interdisciplinary field that introduces tools and concepts from statistical physics to model the complex behavior of financial markets.</p>
+      <p>In "Thermodynamic Analysis of Financial Markets: Measuring Order Book Dynamics with Temperature and Entropy," the authors uncover insights at the microstructure level that have practical implications for volatility forecasting.</p>
+      <h4>Two key insights</h4>
+      <ul>
+        <li><strong>Entropy predicts volatility:</strong> Regression analysis shows that changes in entropy account for 56% of the variance in local volatility — validating entropy as a potential leading indicator for short-term volatility forecasting.</li>
+        <li><strong>Regime detection:</strong> Shifts in Market Temperature and Entropy align with regime changes, including liquidity events and bursts of trading activity. These measures may be useful in adaptive trading strategies.</li>
+      </ul>
+      <div class="modal-citation">Li, Xiao, Valentin Polukarov, and Carmine Ventre. "Thermodynamic Analysis of Financial Markets: Measuring Order Book Dynamics with Temperature and Entropy." Entropy 26, no. 1 (2024): 24.</div>
+      <a href="https://www.linkedin.com/in/kkendall1221" target="_blank" class="modal-li-link">Read on LinkedIn ↗</a>
+    `
+  },
+  tariffs: {
+    cat: "Quant · Volatility",
+    title: "GARCH Models for Volatility in High-Frequency Trading Environments",
+    meta: "Research Review · June 2026",
+    body: `
+      <p>Tariffs are back on the menu and disrupting supply chains — with sporadic policy changes turning heightened volatility from a rare event into common behavior. The question: are your methods for volatility forecasting sufficient to handle the storms ahead?</p>
+      <h4>Three major findings</h4>
+      <ul>
+        <li><strong>Hybrid ML approach wins:</strong> The best method for handling volatility's chaotic nature is a hybrid combining GARCH with modern ML techniques like neural networks — achieving a 12% RMSE reduction on average across exchanges.</li>
+        <li><strong>Domain specificity matters:</strong> The best model depends on the exchange and market behavior. GARCH adaptations are often domain-specific.</li>
+        <li><strong>Persistence confirmed:</strong> All models showed strong volatility clustering and persistence, with average β values above 0.80, further validating GARCH's suitability in HFT contexts.</li>
+      </ul>
+      <div class="modal-citation">Celestin, Mbonigaba et al. "Applications of GARCH Models for Volatility Forecasting in High-Frequency Trading Environments." International Journal of Applied and Advanced Scientific Research 10, no. 1 (2025): 12–21.</div>
+      <a href="https://www.linkedin.com/in/kkendall1221" target="_blank" class="modal-li-link">Read on LinkedIn ↗</a>
+    `
+  }
+};
+
+// ── MODAL LOGIC ──
+const overlay = document.getElementById('modal');
+const modalCat = document.getElementById('modal-cat');
+const modalTitle = document.getElementById('modal-title');
+const modalMeta = document.getElementById('modal-meta');
+const modalBody = document.getElementById('modal-body');
+
+function openPost(key) {
+  const p = posts[key];
+  if (!p) return;
+  modalCat.textContent = p.cat;
+  modalTitle.textContent = p.title;
+  modalMeta.textContent = p.meta;
+  modalBody.innerHTML = p.body;
+  overlay.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+  overlay.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+document.getElementById('modal-close').addEventListener('click', closeModal);
+overlay.addEventListener('click', e => { if (e.target === overlay) closeModal(); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+// Wire up research cards
+document.querySelectorAll('[data-post]').forEach(el => {
+  el.addEventListener('click', e => {
+    e.preventDefault();
+    openPost(el.dataset.post);
+  });
+});
+
+// ── RESEARCH FILTER TABS ──
+document.querySelectorAll('[data-filter]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('[data-filter]').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const f = btn.dataset.filter;
+    document.querySelectorAll('[data-category]').forEach(card => {
+      card.style.display = (f === 'all' || card.dataset.category === f) ? '' : 'none';
+    });
+  });
+});
+
+// ── WRITING FILTER TABS ──
+document.querySelectorAll('[data-wfilter]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('[data-wfilter]').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const f = btn.dataset.wfilter;
+    document.querySelectorAll('[data-wcat]').forEach(item => {
+      item.classList.toggle('hidden', !(f === 'all' || item.dataset.wcat === f));
+    });
+  });
+});
+
+// ── SCROLL REVEALS ──
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+  });
+}, { threshold: 0.1 });
+reveals.forEach(r => observer.observe(r));
+</script>
 </body>
 </html>
