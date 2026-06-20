@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reading — Kaleb Kendall</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+--parchment: #F6F0E6;
+--linen: #EDE4D0;
+--sand: #D4C4A0;
+--copper: #B87333;
+--cognac: #7A5C3A;
+--walnut: #3D2E1E;
+--bark: #2C1F0E;
+--forest: #4A5D52;
+--oxblood: #6B2737;
+--muted: #8A7A62;
+--faint: #C8BAA0;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+background: var(--parchment);
+color: var(--bark);
+font-family: 'DM Sans', sans-serif;
+font-size: 16px;
+line-height: 1.7;
+overflow-x: hidden;
+}
+
+/* NAV */
+nav {
+position: fixed;
+top: 0; left: 0; right: 0;
+z-index: 100;
+background: var(--bark);
+padding: 0 48px;
+height: 60px;
+display: flex;
+align-items: center;
+justify-content: space-between;
+border-bottom: 1px solid var(--walnut);
+}
+.nav-logo {
+font-family: 'Cormorant Garamond', serif;
+font-size: 17px;
+font-weight: 500;
+color: var(--parchment);
+letter-spacing: 0.14em;
+text-decoration: none;
+text-transform: uppercase;
+}
+.nav-links { display: flex; gap: 36px; list-style: none; }
+.nav-links a {
+font-size: 11px;
+letter-spacing: 0.1em;
+text-transform: uppercase;
+color: var(--muted);
+text-decoration: none;
+transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--copper); }
+.nav-links a.active { color: var(--copper); }
+
+/* HERO */
+.hero {
+background: var(--parchment);
+padding: 120px 72px 72px;
+border-bottom: 1px solid var(--sand);
+animation: fadeUp 0.9s ease both;
+max-width: 860px;
+}
+@keyframes fadeUp {
+from { opacity: 0; transform: translateY(24px); }
+to { opacity: 1; transform: translateY(0); }
+}
+.hero-rule { width: 40px; height: 2px; background: var(--copper); margin-bottom: 18px; }
+.hero-eyebrow {
+font-size: 11px;
+letter-spacing: 0.22em;
+text-transform: uppercase;
+color: var(--copper);
+margin-bottom: 16px;
+font-weight: 400;
+}
+.hero-h1 {
+font-family: 'Cormorant Garamond', serif;
+font-size: clamp(38px, 5vw, 58px);
+font-weight: 600;
+line-height: 1.1;
+color: var(--bark);
+margin-bottom: 22px;
+letter-spacing: -0.01em;
+}
+.hero-h1 em { font-style: italic; color: var(--bark); }
+.hero-body {
+font-size: 14px;
+color: var(--cognac);
+line-height: 1.85;
+max-width: 460px;
+margin-bottom: 30px;
+font-weight: 300;
+}
+.hero-tags { display: flex; flex-wrap: wrap; gap: 9px; }
+.tag {
+font-size: 11px;
+letter-spacing: 0.04em;
+padding: 6px 16px;
+border-radius: 999px;
+font-weight: 400;
+border: 1px solid var(--sand);
+background: transparent;
+color: var(--walnut);
+transition: background 0.2s, color 0.2s;
+cursor: default;
+}
+.tag:hover { background: var(--linen); }
+
+/* SECTION */
+.section { padding: 64px 48px; }
+.section-header {
+display: flex;
+justify-content: space-between;
+align-items: baseline;
+margin-bottom: 32px;
+padding-bottom: 16px;
+border-bottom: 1px solid var(--sand);
+}
+.section-title {
+font-family: 'Cormorant Garamond', serif;
+font-size: 28px;
+font-weight: 500;
+color: var(--bark);
+letter-spacing: -0.01em;
+}
+.section-count {
+font-size: 10px;
+letter-spacing: 0.12em;
+text-transform: uppercase;
+color: var(--copper);
+font-family: 'DM Mono', monospace;
+}
+
+/* BOOK CARDS — mirrors .research-card */
+.book-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.book-card {
+background: var(--linen);
+border: 1px solid var(--sand);
+border-radius: 3px;
+padding: 28px;
+position: relative;
+overflow: hidden;
+transition: border-color 0.2s, transform 0.2s;
+}
+.book-card:hover { border-color: var(--copper); transform: translateY(-2px); }
+.book-card-title {
+font-family: 'Cormorant Garamond', serif;
+font-size: 19px;
+font-weight: 500;
+color: var(--bark);
+line-height: 1.3;
+margin-bottom: 10px;
+}
+.book-card-note {
+font-size: 12px;
+color: var(--muted);
+line-height: 1.7;
+margin-bottom: 14px;
+font-weight: 300;
+}
+.book-card-author {
+font-size: 11px;
+color: var(--cognac);
+letter-spacing: 0.06em;
+text-transform: uppercase;
+font-family: 'DM Mono', monospace;
+}
+.card-accent { position: absolute; bottom: 0; left: 0; right: 0; height: 2px; background: var(--copper); }
+
+/* FOOTER */
+footer { background: var(--bark); padding: 48px 48px 32px; border-top: 2px solid var(--copper); }
+.footer-top { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
+.footer-name { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 500; color: var(--parchment); letter-spacing: 0.08em; margin-bottom: 8px; }
+.footer-desc { font-size: 12px; color: var(--muted); line-height: 1.7; font-weight: 300; }
+.footer-col-title { font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--copper); margin-bottom: 16px; }
+.footer-links { list-style: none; }
+.footer-links li { margin-bottom: 10px; }
+.footer-links a { font-size: 12px; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+.footer-links a:hover { color: var(--parchment); }
+.footer-bottom { display: flex; justify-content: space-between; align-items: center; padding-top: 24px; border-top: 1px solid var(--walnut); }
+.footer-copy { font-size: 10px; color: var(--walnut); letter-spacing: 0.06em; font-family: 'DM Mono', monospace; }
+
+@media (max-width: 720px) {
+  nav { padding: 0 22px; }
+  .nav-links { gap: 18px; }
+  .hero { padding: 96px 22px 56px; }
+  .section { padding: 48px 22px; }
+  .book-grid { grid-template-columns: 1fr; }
+  .footer-top { grid-template-columns: 1fr; gap: 28px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  .book-card:hover { transform: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">K. Kendall</a>
+  <ul class="nav-links">
+    <li><a href="index.html#research">Research</a></li>
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="index.html#writing">Writing</a></li>
+    <li><a href="recommendations.html" class="active">Reading</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-rule"></div>
+  <p class="hero-eyebrow">Selected Reading</p>
+  <h1 class="hero-h1">The books that<br><em>shaped</em> how I think.</h1>
+  <p class="hero-body">A working library, grouped by the questions it answers. Not a definitive list &mdash; a personal one, revised as I read.</p>
+  <div class="hero-tags">
+    <span class="tag">Economics &amp; Markets</span>
+    <span class="tag">Business &amp; Finance</span>
+    <span class="tag">Philosophy &amp; Ideas</span>
+    <span class="tag">Classics</span>
+    <span class="tag">Advanced</span>
+  </div>
+</section>
+
+<!-- ECONOMICS & MARKETS -->
+<section class="section">
+  <div class="section-header">
+    <h2 class="section-title">Economics &amp; Markets</h2>
+    <span class="section-count">02 titles</span>
+  </div>
+  <div class="book-grid">
+    <article class="book-card">
+      <div class="book-card-title">Principles for Dealing with the Changing World Order</div>
+      <div class="book-card-note">Dalio's study of the long historical cycles that move empires, currencies, and reserve-currency status &mdash; and a framework for where the U.S. and China sit in that arc today.</div>
+      <div class="book-card-author">Ray Dalio</div>
+      <div class="card-accent"></div>
+    </article>
+    <article class="book-card">
+      <div class="book-card-title">How Countries Go Broke: The Big Cycle</div>
+      <div class="book-card-note">A close look at the "big debt cycle": how nations accumulate unsustainable debt, what national insolvency actually looks like, and how it ties into the wider shifts in the world order.</div>
+      <div class="book-card-author">Ray Dalio</div>
+      <div class="card-accent"></div>
+    </article>
+  </div>
+</section>
+
+<!-- BUSINESS & FINANCE -->
+<section class="section">
+  <div class="section-header">
+    <h2 class="section-title">Business &amp; Finance</h2>
+    <span class="section-count">05 titles</span>
+  </div>
+  <div class="book-grid">
+    <article class="book-card">
+      <div class="book-card-title">Your Next Five Moves</div>
+      <div class="book-card-note">Strategy framed like chess &mdash; thinking several moves ahead about who you want to become, the team around you, and the blind spots that derail most plans.</div>
+      <div class="book-card-author">Patrick Bet-David</div>
+      <div class="card-accent"></div>
+    </article>
+    <article class="book-card">
+      <div class="book-card-title">Way of the Wolf</div>
+      <div class="book-card-note">Belfort's "Straight Line" system distilled into a repeatable method for persuasion, influence, and closing.</div>
+      <div class="book-card-author">Jordan Belfort</div>
+      <div class="card-accent"></div>
+    </article>
+    <article class="book-card">
+      <div class="book-card-title">Money: Master the Game</div>
+      <div class="book-card-note">Lessons drawn from interviews with some of the world's top investors, turned into a step-by-step plan for building financial security.</div>
+      <div class="book-card-author">Tony Robbins</div>
+      <div class="card-accent"></div>
+    </article>
+    <article class="book-card">
+      <div class="book-card-title">The 10X Rule</div>
+      <div class="book-card-note">The case that most people badly underestimate the effort a goal demands &mdash; and the argument for setting targets, and action, an order of magnitude higher.</div>
+      <div class="book-card-author">Grant Cardone</div>
+      <div class="card-accent"></div>
+    </article>
+    <article class="book-card">
+      <div class="book-card-title">Dave Ramsey's Complete Guide to Money</div>
+      <div class="book-card-note">The plain-language playbook behind Ramsey's debt-free philosophy: budgeting, getting out of debt, and building wealth on a clear set of rules.</div>
+      <div class="book-card-author">Dave Ramsey</div>
+      <div class="card-accent"></div>
+    </article>
+  </div>
+</section>
+
+<!-- PHILOSOPHY & IDEAS -->
+<section class="section">
+  <div class="section-header">
+    <h2 class="section-title">Philosophy &amp; Ideas</h2>
+    <span class="section-count">04 titles</span>
+  </div>
+  <div class="book-grid">
+    <article class="book-card">
+      <div class="book-card-title">Atomic Habits</div>
+      <div class="book-card-note">How tiny, compounding changes to your systems &mdash; rather than your goals &mdash; drive lasting behavior change.</div>
+      <div class="book-card-author">James Clear</div>
+      <div class="card-accent"></div>
+    </article>
+    <article class="book-card">
+      <div class="book-card-title">The Happiness Advantage</div>
+      <div class="book-card-note">The research-backed argument that happiness fuels success, not the other way around, and how a positive baseline improves performance.</div>
+      <div class="book-card-author">Shawn Achor</div>
+      <div class="card-accent"></div>
+    </article>
+    <article class="book-card">
+      <div class="book-card-title">Switch On Your Brain</div>
+      <div class="book-card-note">A neuroscientist's case that thought patterns physically reshape the brain &mdash; and a practical method for directing them.</div>
+      <div class="book-card-author">Dr. Caroline Leaf</div>
+      <div class="card-accent"></div>
+    </article>
+    <article class="book-card">
+      <div class="book-card-title">The Power of Your Subconscious Mind</div>
+      <div class="book-card-note">A classic on how belief and the subconscious quietly shape the outcomes we experience.</div>
+      <div class="book-card-author">Joseph Murphy</div>
+      <div class="card-accent"></div>
+    </article>
+  </div>
+</section>
+
+<!-- CLASSICS -->
+<section class="section">
+  <div class="section-header">
+    <h2 class="section-title">Classics</h2>
+    <span class="section-count">02 titles</span>
+  </div>
+  <div class="book-grid">
+    <article class="book-card">
+      <div class="book-card-title">Dracula</div>
+      <div class="book-card-note">The 1897 epistolary novel that defined the modern vampire &mdash; still a masterclass in dread, structure, and atmosphere.</div>
+      <div class="book-card-author">Bram Stoker</div>
+      <div class="card-accent"></div>
+    </article>
+    <article class="book-card">
+      <div class="book-card-title">Think and Grow Rich</div>
+      <div class="book-card-note">Hill's 1937 distillation of success principles, drawn from years studying the era's wealthiest industrialists.</div>
+      <div class="book-card-author">Napoleon Hill</div>
+      <div class="card-accent"></div>
+    </article>
+  </div>
+</section>
+
+<!-- ADVANCED -->
+<section class="section">
+  <div class="section-header">
+    <h2 class="section-title">Advanced</h2>
+    <span class="section-count">02 titles</span>
+  </div>
+  <div class="book-grid">
+    <article class="book-card">
+      <div class="book-card-title">International Economics</div>
+      <div class="book-card-note">A rigorous, current treatment of trade and international finance, grounded in real historical cases &mdash; from comparative advantage to currency crises.</div>
+      <div class="book-card-author">Menzie D. Chinn &amp; Douglas A. Irwin</div>
+      <div class="card-accent"></div>
+    </article>
+    <article class="book-card">
+      <div class="book-card-title">The Econometrics of Financial Markets</div>
+      <div class="book-card-note">The graduate-level standard for the statistical methods behind modern asset pricing &mdash; dense, technical, and foundational.</div>
+      <div class="book-card-author">Campbell, Lo &amp; MacKinlay</div>
+      <div class="card-accent"></div>
+    </article>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <div class="footer-name">Kaleb Kendall</div>
+      <div class="footer-desc">Economist &amp; Trade Analyst. Founder of Osiria Capital and Osiria Research. Based in the United States.</div>
+    </div>
+    <div>
+      <div class="footer-col-title">Navigate</div>
+      <ul class="footer-links">
+        <li><a href="index.html#research">Research</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#writing">Writing</a></li>
+        <li><a href="recommendations.html">Reading</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Connect</div>
+      <ul class="footer-links">
+        <li><a href="https://www.linkedin.com/in/kaleb-kendall-5617661b5/" target="_blank">LinkedIn</a></li>
+        <li><a href="https://www.instagram.com/kalebkendall/" target="_blank">Instagram</a></li>
+        <li><a href="https://github.com/kkendall1221" target="_blank">GitHub</a></li>
+        <li><a href="#">Substack</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-copy">© 2026 Kaleb Kendall. All rights reserved.</span>
+  </div>
+</footer>
+
+</body>
+</html>
